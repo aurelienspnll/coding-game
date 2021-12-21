@@ -39,8 +39,7 @@ func (w *World) GetStartPos() (int, int) {
 func (w *World) GetOtherTeleporter(x int, y int) (int, int) {
 	for i := 0; i < w.height; i++ {
 		for j := 0; j < w.width; j++ {
-			current := w.tab[i*w.width+j]
-			if current == "T" && (i != x || j != y) {
+			if w.tab[i*w.width+j] == "T" && (i != x || j != y) {
 				return i, j
 			}
 		}

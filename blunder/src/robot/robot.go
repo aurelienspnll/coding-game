@@ -29,6 +29,7 @@ func NewRobot(posX int, posY int) *Robot {
 	b.direction = [4]string{"S", "E", "N", "W"}
 	b.currentDirectionIndex = 0
 	b.potentialLoop = false
+	b.loop = false
 	return b
 }
 
@@ -80,7 +81,7 @@ func (r *Robot) CleanInitialDirectionFromMemory(oppositeDirectionCount int, oppo
 func (r *Robot) IsStuckInLoop() {
 	initialDirection := r.memory[0]
 	initialDirectionCount := 0
-	oppositeDirection := GetOppositeDirection(r.memory[0])
+	oppositeDirection := GetOppositeDirection(initialDirection)
 	oppositeDirectionCount := 0
 	for _, val := range r.memory {
 		if val == initialDirection {

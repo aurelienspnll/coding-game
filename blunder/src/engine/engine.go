@@ -30,7 +30,7 @@ func (e *Engine) PrintWorldAndRobot() {
 			if i == e.robot.GetPosX() && j == e.robot.GetPosY() {
 				print("R")
 			} else {
-				print(e.world.GetTab()[i*e.world.GetWidth()+j])
+				print(e.world.GetBox(i, j))
 			}
 		}
 		println()
@@ -105,8 +105,8 @@ func (e *Engine) Play() {
 		if x == -1 && y == -1 {
 			return
 		} else {
-			hasMove := e.MoveRobot(x, y)
-			if !hasMove {
+			hasMoved := e.MoveRobot(x, y)
+			if !hasMoved {
 				e.robot.ChangeDirection()
 				e.robot.IncreaseCurrentDirectionIndex()
 				// fmt.Fprintf(os.Stdout, "Blunder can not move to %d ; %d", x, y)
