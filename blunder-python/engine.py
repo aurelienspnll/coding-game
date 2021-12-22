@@ -82,7 +82,7 @@ class Engine:
                     self.robot.change_direction()
                     self.robot.increase_current_direction_index()
                 else:
-                    self.print_world_and_robot()
+                    # self.print_world_and_robot()
                     self.robot.reset_current_direction_index()
                     if self.robot.is_looping():
                         print("LOOP")

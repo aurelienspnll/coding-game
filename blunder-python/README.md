@@ -54,5 +54,8 @@ In this example, Blunder will follow this sequence of moves:
 ## Usage 
 
 ```bash
-go run main.go "../files/blunder/world-1.txt"
+python3 main.py "../files/blunder/world-1.txt"
+
+# test
+python -m unittest discover
 ```
